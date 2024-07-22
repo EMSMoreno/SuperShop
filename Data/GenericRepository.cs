@@ -16,7 +16,7 @@ namespace SuperShop.Data
 
         public IQueryable<T> GetAll()
         {
-            return _context.Set<T>().AsNoTracking().OrderBy(e => e.Name); 
+            return _context.Set<T>().AsNoTracking(); 
             //vai a tabela buscar as coisas
         }
 
