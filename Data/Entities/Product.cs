@@ -41,7 +41,7 @@ namespace SuperShop.Data.Entities
                     return null;
                 }
 
-                return $"https://localhost:44397{ImageUrl.Substring(1)}";
+                return $"https://supershoptpsieduardom.azurewebsites.net{ImageUrl.Substring(1)}";
             }
         } //propriedade só de leitura; dá o caminho da imagem para aqueles que não vão aceder a base de dados
     }
