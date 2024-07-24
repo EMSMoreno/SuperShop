@@ -31,5 +31,18 @@ namespace SuperShop.Data.Entities
         public double Stock { get; set; }
 
         public User User { get; set; } //user que usa o produto
+
+        public string ImageFullPath
+        {
+            get
+            {
+                if(string.IsNullOrEmpty(ImageUrl))
+                {
+                    return null;
+                }
+
+                return $"https://localhost:44397{ImageUrl.Substring(1)}";
+            }
+        } //propriedade só de leitura; dá o caminho da imagem para aqueles que não vão aceder a base de dados
     }
 }
