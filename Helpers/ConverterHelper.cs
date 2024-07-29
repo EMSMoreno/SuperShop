@@ -1,17 +1,18 @@
 ﻿using SuperShop.Data.Entities;
 using SuperShop.Models;
+using System;
 using System.IO;
 
 namespace SuperShop.Helpers
 {
     public class ConverterHelper : IConverterHelper
     {
-        public Product ToProduct(ProductViewModel model, string path, bool isNew)
+        public Product ToProduct(ProductViewModel model, Guid imageId, bool isNew)
         {
             return new Product
             {
-                Id = isNew ? 0 : model.Id, //ternário, se o valor vem a true, vai a zero e dps é colocado na base de dados, se nao vem do edit
-                ImageUrl = path,
+                Id = isNew ? 0 : model.Id, //ternário, se o valor vem a true, vai a zero e dps é colocado na base de dados, se não vem do edit
+                ImageId = imageId,
                 IsAvailable = model.IsAvailable,
                 LastPurchase = model.LastPurchase,
                 LastSale = model.LastSale,
@@ -30,7 +31,7 @@ namespace SuperShop.Helpers
                 IsAvailable = product.IsAvailable,
                 LastPurchase = product.LastPurchase,
                 LastSale = product.LastSale,
-                ImageUrl = product.ImageUrl,
+                ImageId = product.ImageId,
                 Name = product.Name,
                 Price = product.Price,
                 Stock = product.Stock,
