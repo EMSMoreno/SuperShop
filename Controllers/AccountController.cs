@@ -83,6 +83,7 @@ namespace SuperShop.Controllers
                         return View(model);
                     }
 
+                    //TODO
                     var loginViewModel = new LoginViewModel
                     {
                         Password = model.Password,

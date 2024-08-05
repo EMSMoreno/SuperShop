@@ -54,10 +54,14 @@
         </div>
     </div>
 </div>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" class="btn btn-success">Back to List</a>
-    </form>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">
+        <i class="fa-solid fa-trash-can"></i> Delete
+    </button> |
+    <a asp-action="Index" class="btn btn-success">
+        <i class="fa-solid fa-chevron-left"></i> Back to List
+    </a>
+</form>
 </div>
