@@ -44,13 +44,13 @@
                     @Html.DisplayFor(modelItem => item.Value)
                 </td>
                 <td>
-                    <a asp-action="Increase" class="btn btn-warning">
+                    <a asp-action="Increase" asp-route-id="@item.Id" class="btn btn-warning">
                         <i class="fa fa-plus"></i>
                     </a>
-                    <a asp-action="Decrease" class="btn btn-info">
+                    <a asp-action="Decrease" asp-route-id="@item.Id" class="btn btn-info">
                         <i class="fa fa-minus"></i>
                     </a>
-                    <a asp-action="DeleteItem" class="btn btn-danger">Delete</a>
+                    <a asp-action="DeleteItem" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }
