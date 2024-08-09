@@ -31,7 +31,7 @@ namespace SuperShop.Controllers
             }
 
             var countryId = await _countryRepository.DeleteCityAsync(city);
-            return this.RedirectToAction("Details/{countryId}");
+            return RedirectToAction("Details", new { id = countryId });
         }
 
         public async Task<IActionResult> EditCity(int? id)
@@ -58,7 +58,7 @@ namespace SuperShop.Controllers
                 var countryId = await _countryRepository.UpdateCityAsync(city);
                 if (countryId != 0)
                 {
-                    return this.RedirectToAction($"Details/{countryId}");
+                    return this.RedirectToAction("Details", new { id = countryId });
                 }
             }
             return this.View(city);
@@ -161,7 +161,7 @@ namespace SuperShop.Controllers
             return View(country);
         }
 
-        public async Task<IActionResult> Delete (int? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
